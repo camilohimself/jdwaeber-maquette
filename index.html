@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean-David Waeber - Organiste & Chef de Chœur</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background-color: #ffffff;
+            font-weight: 300;
+        }
+
+        /* Navigation minimaliste */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8b7355;
+        }
+
+        /* Hero section épuré */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #ffffff;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #8b7355;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+        }
+
+        .cta-button:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        /* Sections avec beaucoup de blanc */
+        .section {
+            padding: 6rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .section h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #2c2c2c;
+            margin-bottom: 4rem;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #666;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+        }
+
+        .about-text p:first-child {
+            font-size: 1.3rem;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Expertise minimaliste */
+        .expertise {
+            background: #fafafa;
+            padding: 6rem 0;
+            margin-top: 6rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .expertise-item {
+            text-align: left;
+            padding: 2rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .expertise-item h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Quote section */
+        .quote-section {
+            padding: 8rem 0;
+            text-align: center;
+            background: white;
+        }
+
+        .quote {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote blockquote {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: #2c2c2c;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .quote cite {
+            font-size: 0.9rem;
+            color: #8b7355;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+
+        /* Gallery simple */
+        .gallery {
+            padding: 6rem 0;
+            background: #fafafa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 3rem;
+        }
+
+        /* Contact simple */
+        .contact {
+            padding: 8rem 0;
+            text-align: center;
+            background: white;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Footer minimal */
+        footer {
+            background: #2c2c2c;
+            color: #ccc;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .quote blockquote {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        /* Subtle hover effects only */
+        .gallery-item {
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Jean-David Waeber</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#biographie">Biographie</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Jean-David Waeber</h1>
+            <p class="subtitle">Organiste & Chef de Chœur</p>
+            <p class="description">
+                Maître de chapelle de la cathédrale de Sion, je dédie ma vie à la transmission 
+                du patrimoine musical sacré, du chant grégorien aux créations contemporaines.
+            </p>
+            <a href="#biographie" class="cta-button">Découvrir</a>
+        </div>
+    </section>
+
+    <section id="biographie" class="section">
+        <h2>Biographie</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    En tant que Maître de chapelle de la cathédrale de Sion, je dirige un vaste répertoire 
+                    musical allant du chant grégorien à mes propres compositions.
+                </p>
+                <p>
+                    Organiste et chef de chœur, je pratique régulièrement la musique de chambre au clavecin 
+                    et à l'orgue. Je dirige le chœur Oracantat de Sion ainsi que les différents ensembles 
+                    de la Maîtrise cathédrale.
+                </p>
+                <p>
+                    Un projet particulièrement cher à mon cœur est la présentation mensuelle d'une cantate 
+                    de Johann Sebastian Bach, témoignant de mon engagement pour la transmission de ce 
+                    patrimoine exceptionnel.
+                </p>
+                <p>
+                    Parallèlement à mes activités artistiques, je dédie une grande partie de mon temps 
+                    à l'enseignement musical au sein de l'École maîtrisienne, qui rassemble une trentaine 
+                    de jeunes chanteuses, chanteurs et instrumentistes.
+                </p>
+            </div>
+            <div class="about-image">
+                Photo de Jean-David à l'orgue
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote">
+            <blockquote>
+                "La musique sacrée nous élève au-delà du quotidien et nous connecte 
+                à quelque chose de plus grand que nous."
+            </blockquote>
+            <cite>Jean-David Waeber</cite>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="section">
+            <h2>Domaines d'expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Direction musicale</h3>
+                    <p>Direction du chœur Oracantat de Sion et des ensembles de la Maîtrise cathédrale. 
+                    Spécialisation dans le répertoire sacré, du chant grégorien aux œuvres contemporaines.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Orgue & Clavecin</h3>
+                    <p>Interprétation soliste et musique de chambre. Formation approfondie dans la tradition 
+                    baroque et la pratique historiquement informée.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Composition</h3>
+                    <p>Création d'œuvres originales pour orgue, chœur et formations de chambre, 
+                    alliant respect de la tradition et sensibilité contemporaine.</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Pédagogie</h3>
+                    <p>Enseignement musical au Lycée-Collège des Creusets et direction de l'École 
+                    maîtrisienne de la cathédrale de Sion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="gallery">
+        <div class="section">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">🎼</div>
+                <div class="gallery-item">⛪</div>
+                <div class="gallery-item">🎹</div>
+                <div class="gallery-item">👥</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>
+            Pour toute collaboration artistique, engagement ou projet pédagogique, 
+            je serais ravi d'échanger avec vous.
+        </p>
+        <a href="#" class="cta-button">Prendre contact</a>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <h4>Maîtrise cathédrale</h4>
+                <p>Cathédrale de Sion<br>Valais, Suisse</p>
+            </div>
+            <div class="contact-item">
+                <h4>Enseignement</h4>
+                <p>Lycée-Collège des Creusets<br>Sion</p>
+            </div>
+            <div class="contact-item">
+                <h4>Chœur Oracantat</h4>
+                <p>Direction artistique<br>Sion</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Jean-David Waeber. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Navigation smooth scroll uniquement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
