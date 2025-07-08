@@ -151,7 +151,128 @@
             letter-spacing: -0.5px;
         }
 
-        /* About Section */
+        /* Bio premium styling */
+        .bio-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .bio-lead {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #8b7355;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .bio-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .bio-section:last-child {
+            border-bottom: none;
+        }
+
+        .bio-section h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .bio-section h3::before {
+            content: '♪';
+            position: absolute;
+            left: 0;
+            color: #8b7355;
+            font-size: 1.2rem;
+        }
+
+        .bio-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* Répertoire Section */
+        .repertoire-section {
+            background: #fafafa;
+            padding: 6rem 0;
+        }
+
+        .repertoire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .repertoire-category {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .repertoire-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .repertoire-category.featured {
+            background: linear-gradient(135deg, #8b7355 0%, #a0845c 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .repertoire-category.featured h3,
+        .repertoire-category.featured .repertoire-list {
+            color: white;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .repertoire-category h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+        }
+
+        .repertoire-list {
+            text-align: left;
+        }
+
+        .repertoire-list p {
+            margin-bottom: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .repertoire-list strong {
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .repertoire-list em {
+            font-style: italic;
+            color: #8b7355;
+        }
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -187,7 +308,109 @@
             font-size: 1rem;
         }
 
-        /* Expertise minimaliste */
+        /* Agenda Section */
+        .agenda-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .upcoming-concerts h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .concert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .concert-item {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #8b7355;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .concert-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .concert-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .concert-date .day {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #8b7355;
+            line-height: 1;
+        }
+
+        .concert-date .month {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        }
+
+        .concert-details {
+            flex: 1;
+        }
+
+        .concert-details h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .concert-details p {
+            color: #666;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .concert-type {
+            display: inline-block;
+            background: #f8f8f8;
+            color: #8b7355;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive agenda */
+        @media (max-width: 768px) {
+            .concert-item {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .concert-date {
+                min-width: auto;
+            }
+        }
         .expertise {
             background: #fafafa;
             padding: 6rem 0;
@@ -384,6 +607,8 @@
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#biographie">Biographie</a></li>
+                <li><a href="#repertoire">Répertoire</a></li>
+                <li><a href="#agenda">Agenda</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#galerie">Galerie</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -429,6 +654,116 @@
             </div>
             <div class="about-image">
                 Photo de Jean-David à l'orgue
+            </div>
+        </div>
+    </section>
+
+    <section id="agenda" class="section">
+        <h2>Agenda</h2>
+        <div class="agenda-content">
+            <div class="upcoming-concerts">
+                <h3>Prochains concerts</h3>
+                <div class="concert-list">
+                    <div class="concert-item">
+                        <div class="concert-date">
+                            <span class="day">15</span>
+                            <span class="month">Sept</span>
+                        </div>
+                        <div class="concert-details">
+                            <h4>Cantate BWV 147 - J.S. Bach</h4>
+                            <p>Cathédrale de Sion - 17h00</p>
+                            <span class="concert-type">Maîtrise cathédrale</span>
+                        </div>
+                    </div>
+                    
+                    <div class="concert-item">
+                        <div class="concert-date">
+                            <span class="day">28</span>
+                            <span class="month">Sept</span>
+                        </div>
+                        <div class="concert-details">
+                            <h4>Concert d'orgue - Musique baroque</h4>
+                            <p>Église Saint-Théodule - 20h00</p>
+                            <span class="concert-type">Récital</span>
+                        </div>
+                    </div>
+                    
+                    <div class="concert-item">
+                        <div class="concert-date">
+                            <span class="day">12</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="concert-details">
+                            <h4>Chœur Oracantat - Polyphonie sacrée</h4>
+                            <p>Cathédrale de Sion - 19h30</p>
+                            <span class="concert-type">Direction</span>
+                        </div>
+                    </div>
+                    
+                    <div class="concert-item">
+                        <div class="concert-date">
+                            <span class="day">03</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <div class="concert-details">
+                            <h4>Musique de chambre au clavecin</h4>
+                            <p>Château de Tourbillon - 18h00</p>
+                            <span class="concert-type">Ensemble</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="repertoire" class="repertoire-section">
+        <div class="section">
+            <h2>Répertoire</h2>
+            
+            <div class="repertoire-grid">
+                <div class="repertoire-category">
+                    <div class="category-icon">🎼</div>
+                    <h3>Musique baroque</h3>
+                    <div class="repertoire-list">
+                        <p><strong>J.S. Bach</strong> - Cycle complet des cantates</p>
+                        <p><strong>Buxtehude</strong> - Œuvres pour orgue</p>
+                        <p><strong>Couperin</strong> - Pièces de clavecin</p>
+                        <p><strong>Pachelbel</strong> - Magnificat</p>
+                    </div>
+                </div>
+                
+                <div class="repertoire-category">
+                    <div class="category-icon">⛪</div>
+                    <h3>Musique sacrée</h3>
+                    <div class="repertoire-list">
+                        <p><strong>Chant grégorien</strong> - Tradition millénaire</p>
+                        <p><strong>Palestrina</strong> - Polyphonie Renaissance</p>
+                        <p><strong>Victoria</strong> - Motets sacrés</p>
+                        <p><strong>Poulenc</strong> - Œuvres contemporaines</p>
+                    </div>
+                </div>
+                
+                <div class="repertoire-category">
+                    <div class="category-icon">🎹</div>
+                    <h3>Créations originales</h3>
+                    <div class="repertoire-list">
+                        <p><strong>Compositions pour orgue</strong> - Style néo-baroque</p>
+                        <p><strong>Arrangements choraux</strong> - Adaptations modernes</p>
+                        <p><strong>Harmonisations</strong> - Chants liturgiques</p>
+                        <p><strong>Pièces de chambre</strong> - Formations mixtes</p>
+                    </div>
+                </div>
+                
+                <div class="repertoire-category featured">
+                    <div class="category-icon">👑</div>
+                    <h3>Projet phare</h3>
+                    <div class="repertoire-list">
+                        <p><strong>Cantates de Bach</strong></p>
+                        <p>Présentation mensuelle intégrale</p>
+                        <p>Direction de la Maîtrise cathédrale</p>
+                        <p><em>"Un voyage spirituel à travers l'œuvre du Cantor"</em></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
